@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--扫描基础包-->
-    <context:component-scan base-package="com.person.web"/>
+    <context:component-scan base-package="com.wthfeng.pearl"/>
 
 
     <!--   加载properties配置文件 -->
@@ -27,12 +27,12 @@
     <!--   创建mybatis的sqlSessionFactory,生产session的工厂 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath:com/person/web/mapper/*.xml"/>
+        <property name="mapperLocations" value="classpath:com/wthfeng/pearl/mapper/*.xml"/>
     </bean>
 
     <!--  使用包扫描的方式对dao接口进行扫描，将其下所有接口映射为Mapper接口代理 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.person.web.dao"/>
+        <property name="basePackage" value="com.wthfeng.pearl.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
