@@ -1,6 +1,7 @@
 .idea
-/target
-build
+target
 .project
-.setting
+.settings
 .classpath
+perweb-cms.iml
+
